@@ -10,16 +10,16 @@ with DAG(
 ) as dag:
     t0_grant_permission = BashOperator(
         task_id="t0_grant_permission",
-        bash_command="chmod +x /opt/airflow/plugins/shell/select_fruit.sh ",
+        bash_command="chmod +x /opt/airflow/dags/bash_scripts/select_fruit.sh ",
     )
     t1_orange = BashOperator(
         task_id="t1_orange",
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh ORANGE",
+        bash_command="/opt/airflow/dags/bash_scripts/select_fruit.sh ORANGE",
     )
 
     t2_avocado = BashOperator(
         task_id="t2_avocado",
-        bash_command="/opt/airflow/plugins/shell/select_fruit.sh AVOCADO",
+        bash_command="/opt/airflow/dags/bash_scripts/select_fruit.sh AVOCADO",
     )
 
     t0_grant_permission >> [t1_orange, t2_avocado]
