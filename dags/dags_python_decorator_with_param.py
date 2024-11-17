@@ -18,9 +18,6 @@ with DAG(
         phone = kwargs["phone"] or "empty"
         print(f"email: {email}")
         print(f"phone: {phone}")
-        from pprint import pprint
-
-        pprint(kwargs)
 
     python_task_1 = regist3(
         "hjkim", "man", "seoul", email="hjkim_sun@naver.com", phone="010"
